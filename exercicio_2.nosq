@@ -1,0 +1,24 @@
+db.biblioteca.countDocuments({
+  LongDescription: {
+    $regex: /java|mobile/i
+  }
+});
+
+
+db.biblioteca.countDocuments({
+  status: { $ne: "PUBLISH" },
+  pageCount: { $lt: 300 }
+});
+
+db.biblioteca.countDocuments({
+  $and: [
+    { title: "MongoDB.SQL Server" },
+    { nome: "SQL Server.MongoDB" }
+  ]
+});
+
+db.biblioteca.countDocumentss({
+  ISBN: {
+    $regex: /^18/
+  }
+});
